@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"encoding/json"
+	"net/http"
 	"own/models"
 )
 
@@ -9,12 +11,8 @@ type ReqCreateTask struct {
 	Description string `json:"description"`
 }
 
-type application struct {
-	Models models.Models
-}
-/*
-func CreateTask(w http.ResponseWriter, r *http.Request) {
 
+func (h *Handler) CreateTask(w http.ResponseWriter, r *http.Request) {
 	var req ReqCreateTask
 	err := json.NewDecoder(r.Body).Decode(&req)
 	if err != nil {
@@ -31,20 +29,26 @@ func CreateTask(w http.ResponseWriter, r *http.Request) {
 
 	q := `INSERT INTO tasks (
 			title, 
-			description, 
+			description,
+			completed
 		) VALUES (
 		 	$1, 
 			$2, 
-			false, 
-			NOW(), 
-			NOW()
+			false
 		) RETURNING id, title, description, completed, created_at, updated_at`
 
-	err = DB.QueryRow(
+	err = h.Models.Task.DB.QueryRow(
 			q, 
 			req.Title, 
 			req.Description, 
-			).Scan(&task.ID, &task.CreatedAt, &task.UpdatedAt)
+			).Scan(
+				&task.ID,
+				&task.Title,
+				&task.Description,
+				&task.Completed,
+				&task.CreatedAt,
+				&task.UpdatedAt,
+    )
 
 	if err != nil {
 		http.Error(w, "Failed to create task", http.StatusInternalServerError)
@@ -52,6 +56,6 @@ func CreateTask(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(task)
 }
-	*/
