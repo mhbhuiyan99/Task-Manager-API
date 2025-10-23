@@ -9,3 +9,11 @@
 2. First, work in a single file.
 3. Complete one handler first (`createTask`); then you can start structuring.
 
+## Step 2:
+1. Structuring the `CreateTask` first.
+2. Yes, it's not easy. See what has been done.
+3. For `GetAllTasks` we need two things:
+    i. fetching data from the database 
+    ii. need an HTTP route that returns JSON
+
+
