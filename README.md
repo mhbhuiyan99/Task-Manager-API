@@ -34,5 +34,6 @@
 
 ## Step 7:
 1. Implement pagination.
+2. 🎯
 
 

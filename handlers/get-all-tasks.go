@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"own/models"
+	"strconv"
 )
 
 func (h *Handler) getAllTasks(filter models.Filter) ([]models.Task, models.Metadata, error) {
@@ -47,9 +48,32 @@ func (h *Handler) getAllTasks(filter models.Filter) ([]models.Task, models.Metad
 
 func (h *Handler) GetAllTasks(w http.ResponseWriter, r *http.Request) {
 	
+	// Default value
+	page := 1
+	pageSize := 20
+
+	// Parse query params: ?page=2&pageSize=10
+	query := r.URL.Query()
+
+	p := query.Get("page")
+	if p != "" {
+		val, err := strconv.Atoi(p)
+		if err == nil && val > 0 {
+			page = val
+		}
+	}
+
+	ps := query.Get("pageSize")
+	if ps != "" {
+		val, err := strconv.Atoi(ps)
+		if err == nil && val > 0 {
+			pageSize = val;
+		}
+	}
+
 	f := models.Filter{
-		Page: 1,
-		PageSize: 5,
+		Page: page,
+		PageSize: pageSize,
 	}
 
 	tasks, _, err := h.getAllTasks(f)
