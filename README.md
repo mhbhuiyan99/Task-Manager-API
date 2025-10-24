@@ -1,4 +1,21 @@
-${{\color{Greenyellow}\large{\textsf{Target: }}}}\$ Understanding of Go's HTTP server, database connections, and error handling without relying on frameworks.
+# Task Manager API
+A RESTful API for managing tasks built with Go (no frameworks) and PostgreSQL.
+
+## Learning Objective
+Understanding Go's HTTP server, database connections, and error handling without relying on frameworks.
+
+## 🛠️ Tech Stack
+- **Language:** Go 1.22+
+- **Database:** PostgreSQL
+- **Driver:** `github.com/lib/pq`
+- **Testing:** Postman
+
+## 📋 Features
+- ✔️ Create new tasks
+- ✔️ Get all tasks with pagination
+- ✔️ Get single task by ID
+- ✔️ Update task status
+- ✔️ Delete tasks
 
 ## Step 1:
 1. Build and start the server.
