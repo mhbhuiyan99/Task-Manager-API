@@ -1,3 +1,4 @@
+${{\color{Greenyellow}\large{\textsf{Target: }}}}\$ Understanding of Go's HTTP server, database connections, and error handling without relying on frameworks.
 
 ## Step 1:
 1. Build and start the server.
