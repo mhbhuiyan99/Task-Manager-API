@@ -20,3 +20,7 @@
 1. Complete `GetTask` by ID (Wildcard route).
 2. Similar to `GetAllTasks` but need to get the ID first.
 
+## Step 4:
+1. Complete `DeleteTask`.
+2. Now I feel it's easy.
+

@@ -35,7 +35,7 @@ func main() {
 	mux.HandleFunc("GET /tasks", h.GetAllTasks)
 	mux.HandleFunc("GET /tasks/{id}", h.GetTask)
 	//mux.HandleFunc("PUT /tasks/{id}", updateTask)
-	//mux.HandleFunc("DELETE /tasks/{id}", deleteTask)
+	mux.HandleFunc("DELETE /tasks/{id}", h.DeleteTask)
 
 	fmt.Println("Server running...")
 	log.Fatal(http.ListenAndServe(":4000", mux))
