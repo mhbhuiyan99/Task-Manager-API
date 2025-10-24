@@ -33,7 +33,7 @@ func main() {
 	mux.HandleFunc("/", home)
 	mux.HandleFunc("POST /tasks", h.CreateTask)
 	mux.HandleFunc("GET /tasks", h.GetAllTasks)
-	//mux.HandleFunc("GET /tasks/{id}", getTask)
+	mux.HandleFunc("GET /tasks/{id}", h.GetTask)
 	//mux.HandleFunc("PUT /tasks/{id}", updateTask)
 	//mux.HandleFunc("DELETE /tasks/{id}", deleteTask)
 

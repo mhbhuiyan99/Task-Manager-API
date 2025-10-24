@@ -13,7 +13,10 @@
 1. Structuring the `CreateTask` first.
 2. Yes, it's not easy. See what has been done.
 3. For `GetAllTasks` we need two things:
-    i. fetching data from the database 
-    ii. need an HTTP route that returns JSON
+    1. fetching data from the database 
+    2. need an HTTP route that returns JSON
 
+## Step 3:
+1. Complete `GetTask` by ID (Wildcard route).
+2. Similar to `GetAllTasks` but need to get the ID first.
 
