@@ -17,7 +17,12 @@ func (s *Server) Serve() error {
 	}
 
 	fmt.Println("Server is running...")
-	return srv.ListenAndServe()
+	err := srv.ListenAndServe()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (s *Server) routers() http.Handler {

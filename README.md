@@ -29,5 +29,10 @@
 2. After updating, the order changed. Add `ORDER BY ... ASC` in `SELECT` statement of `GetAllTasks`.
 
 ## Step 6:
-1. Paginating records
+1. Intended to implement pagination, but ended up structuring HTTP requests instead.
+2. 🥵
+
+## Step 7:
+1. Implement pagination.
+
 
