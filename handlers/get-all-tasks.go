@@ -6,9 +6,10 @@ import (
 	"own/models"
 )
 
-func (h Handler) getAllTasks() ([]models.Task, error) {
+func (h *Handler) getAllTasks() ([]models.Task, error) {
 
-	q := `SELECT id, title, description, completed, created_at, updated_at FROM tasks`
+	q := `SELECT id, title, description, completed, created_at, updated_at 
+		  FROM tasks ORDER BY id ASC`
 
 	rows, err := h.Models.Task.DB.Query(q)
 	if err != nil {	

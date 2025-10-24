@@ -26,4 +26,8 @@
 
 ## Step 5:
 1. Complete `UpdateTask`.
+2. After updating, the order changed. Add `ORDER BY ... ASC` in `SELECT` statement of `GetAllTasks`.
+
+## Step 6:
+1. Paginating records
 
