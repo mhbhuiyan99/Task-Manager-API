@@ -34,7 +34,7 @@ func main() {
 	mux.HandleFunc("POST /tasks", h.CreateTask)
 	mux.HandleFunc("GET /tasks", h.GetAllTasks)
 	mux.HandleFunc("GET /tasks/{id}", h.GetTask)
-	//mux.HandleFunc("PUT /tasks/{id}", updateTask)
+	mux.HandleFunc("PUT /tasks/{id}", h.UpdateTask)
 	mux.HandleFunc("DELETE /tasks/{id}", h.DeleteTask)
 
 	fmt.Println("Server running...")

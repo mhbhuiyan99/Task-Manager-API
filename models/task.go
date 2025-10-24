@@ -14,10 +14,3 @@ type Task struct {
 type TaskModel struct {
 	DB *sql.DB
 }
-
-
-type UpdateTaskRequest struct {
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Completed   bool   `json:"completed"`
-}
